@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<!--描述servlet  -->
+	<servlet>
+		<servlet-name>helloServlet</servlet-name><!-- 名字可以自己起, 只要保证和下面的name名字一致即可 -->
+		<!-- 类名要写完整
+			class.forName():
+			注: 容器会利用java反射来加载Servlet(HelloServlet对象)
+				如果类名写错, 会加载失败
+				加载: 即,找到类的字节码文件, 然后将字节码文件的内容
+				读取到方法区中, 转化成一个class对象
+		 -->
+		<servlet-class>web.HelloServlet</servlet-class>
+		
+	</servlet>
+	<servlet-mapping>
+			<servlet-name>helloServlet</servlet-name>
+			<!-- url-pattern: 告诉容器,请求地址与Servlet的对应关系 -->
+			<url-pattern>/hello</url-pattern>
+		</servlet-mapping>
+</web-app>
